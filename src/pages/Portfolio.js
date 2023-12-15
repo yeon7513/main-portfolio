@@ -55,8 +55,8 @@ function Portfolio(){
             </div>
             <div className="btns">
               <PortfolioLink name={'themeChange'} onClick={scrollTop} />
-              <SolidBtn href='https://github.com/yeon7513' target='_blank' className='link-btn'>Source</SolidBtn>
-              <SolidBtn href='https://github.com/yeon7513' target='_blank' className='link-btn'>Demo</SolidBtn>
+              <SolidBtn href='https://github.com/yeon7513/theme-change' target='_blank' className='link-btn'>Source</SolidBtn>
+              <SolidBtn href='https://tranquil-monstera-10e97e.netlify.app' target='_blank' className='link-btn'>Demo</SolidBtn>
             </div>
           </div>
           <div className='portfolio-item'>
