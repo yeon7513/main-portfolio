@@ -5,16 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faMobile, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 const portfolioList = [
-  {no : 1, url : 'https://github.com/yeon7513', subject : 'Theme Change!'},
-  {no : 2, url : 'https://github.com/yeon7513', subject : '100대 리스트'},
-  {no : 3, url : 'https://github.com/yeon7513', subject : '검색 API'},
-  {no : 4, url : 'https://github.com/yeon7513', subject : "Let's Match Cards!"},
-  {no : 5, url : 'https://github.com/yeon7513', subject : 'MY TODOLIST'},
-  {no : 6, url : 'https://github.com/yeon7513', subject : '영화 검색 앱'},
-  {no : 7, url : 'https://github.com/yeon7513', subject : '3Match Puzzle'},
-  {no : 8, url : 'https://github.com/yeon7513', subject : '애플스토어 리뉴얼'},
+  {no : 1, url : '/portfolio/themeChange', subject : 'Theme Change!'},
+  {no : 2, url : '/portfolio/top100List', subject : '100대 리스트'},
+  {no : 3, url : '/portfolio/searchAPI', subject : '검색 API'},
+  {no : 4, url : '/portfolio/matchingCard', subject : "Let's Match Cards!"},
+  {no : 5, url : '/portfolio/myTodolist', subject : 'MY TODOLIST'},
+  {no : 6, url : '/portfolio/movieApp', subject : '영화 검색 앱'},
+  {no : 7, url : '/portfolio/_3MatchPuzzle', subject : '3Match Puzzle'},
+  {no : 8, url : '/portfolio/teamProject', subject : '애플스토어 리뉴얼'},
 ]
 
 function Home(){
@@ -93,7 +94,7 @@ function Home(){
                 return (
                   <li key={li.no}>
                     <span>{li.no}</span>
-                    <a href={li.url} target="_blank" rel="noopener noreferrer">{li.subject}</a>
+                    <Link to={li.url}>{li.subject}</Link>
                   </li>
                 )
               })}
