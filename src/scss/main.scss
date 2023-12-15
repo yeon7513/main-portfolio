@@ -1,0 +1,152 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* colors */
+$main-color: #F3EEEA;
+$sub-color: #EBE3D5;
+$btn-color: #B0A695;
+$accent-color: #776B5D;
+
+/* reset */
+* {margin: 0; padding: 0;}
+li {list-style-type: none;}
+a {text-decoration: none; color: inherit;}
+body {
+  font-family: 'Pretendard-Regular', sans-serif;
+  color: #42372B;
+  background-color: $main-color;
+}
+
+@media (max-width: 599px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+/* 404 */
+.page404-wrap {
+  width: 100vw;
+  height: 100vh;
+  background-color: #b8d6e1;
+  background-image: url(../images/oops.jpg);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+  background-size: 40%;
+  h1 {
+    position: absolute;
+    top: 35%; right: 25%;
+    transform: rotate(-10deg);
+    font-size: 1.875rem;
+    color: #fff;
+  }
+  .inner {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    max-width: 1024px;
+    height: 100vh;
+    margin: 0 auto;
+    .page404 {
+      width: 50%;
+      text-align: center;
+      .page404-title {
+        margin-bottom: 50px;
+        h2 {
+          font-size: 5rem;
+          color: #000;
+        }
+        p {
+          margin-top: 10px;
+          font-size: 1.875rem;
+        }
+      }
+      .page404-link {
+        padding: 30px;
+        border-radius: 20px;
+        background-color: rgba(255,255,255,0.5);
+        p {
+          margin-bottom: 20px;
+          font-size: 1.125rem;
+        }
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          li {
+            width: 25%;
+            button {
+              width: 100%;
+              height: 30px;
+              border-radius: 5px;
+              border: 1px solid #b8d6e1;
+              font-size: 14px;
+              background-color: transparent;
+              transition: .5s;
+              cursor: pointer;
+              &:hover {
+                border: 1px solid #fff;
+                background-color: #b8d6e1;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .page404-wrap {
+    .inner {
+      padding: 0 20px;
+    }
+  }
+}
+
+/* mobile */
+@media (max-width: 599px) {
+  .page404-wrap {
+    background-position: top center;
+    background-size: 80%;
+    h1 {
+      top: 23%; right: 60%;
+    }
+    .inner {
+      align-items: flex-end;
+      padding: 0 20px 150px;
+      box-sizing: border-box;
+      .page404 {
+        width: 100%;
+        .page404-title {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+}
