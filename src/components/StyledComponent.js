@@ -6,7 +6,7 @@ export const Container = styled.section`
   margin: 0 auto;
   padding-top: 130px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
   &.portfolio-wrap {
     height: 100%;
   }
@@ -61,19 +61,19 @@ export const Title = styled.h2`
   @media (min-width: 600px) and (max-width: 1023px) {
     font-size: 120px;
     &.hello {
-      top: 0; left: 0;
+      top: 0; left: 5px;
     }
     &.world {
-      bottom: 0; right: 0;
+      bottom: 0; right: 5px;
     }
   }
   @media (max-width: 599px) {
     font-size: 90px;
     &.hello {
-      top: 0; left: 0;
+      top: 0; left: 5px;
     }
     &.world {
-      bottom: 0; right: 0;
+      bottom: 0; right: 5px;
       font-size: 85px;
     }
   }
