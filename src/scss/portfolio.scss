@@ -15,7 +15,7 @@ $accent-color: #776B5D;
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   gap: 20px;
   width: 100%;
   margin-top: 20px;
@@ -26,6 +26,7 @@ $accent-color: #776B5D;
     padding: 20px;
     box-sizing: border-box;
     background-color: #fff;
+    box-shadow: 0 2px 8px 1px rgba(0,0,0,.1);
     .pf-title {
       margin-bottom: 10px;
       padding-bottom: 10px;
@@ -33,23 +34,24 @@ $accent-color: #776B5D;
       font-weight: bold;
       span {
         margin-right: 5px;
-        font-size: .875rem;
-        font-weight: normal;
       }
     }
     .btns {
       display: flex;
       justify-content: space-between;
-      gap: 5px;
+      gap: 3px;
       width: 100%;
+      text-align: center;
+      box-sizing: border-box;
       .link-btn {
         flex: 1;
+        box-sizing: border-box;
       }
       .preview {
         flex: 1;
         display: block;
-        padding: .4375rem .625rem;
-        font-size: 14px;
+        padding: .4375rem;
+        font-size: .875rem;
         font-weight: bold;
         border: none;
         outline: none;
@@ -66,11 +68,23 @@ $accent-color: #776B5D;
   }
 }
 
+@keyframes fade {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
 .work {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  animation: fade 1s ease-in-out;
   .moniter {
     position: relative;
     width: 50%;
@@ -124,7 +138,7 @@ $accent-color: #776B5D;
       right: 7%;
     }
     &::after {
-      height: 20px;
+      height: 1.25rem;
       top: 23px;
       left: 20px;
       border: .3125rem solid rgba($color: $accent-color, $alpha: 1.0);
@@ -179,49 +193,22 @@ $accent-color: #776B5D;
 
 /* tablet */
 @media (min-width: 600px) and (max-width: 1023px) {
-  html {
-    overflow-y: auto;
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-    .portfolio-item {
-      .btns {
-        flex-wrap: wrap;
-        text-align: center;
-        .preview {
-          flex: 0 0 100%;
-        }
-      }
+  .portfolio-title {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 60px;
     }
-  }
-  .work {
-    position: relative;
-    justify-content: flex-end;
-    flex-direction: column-reverse;
-    height: 600px;
-    .work-contents {
-      position: absolute;
-      bottom: 0; right: 0;
-      z-index: 5;
-      width: 62%;
-      height: 340px;
-    }
-  }
-}
-
-/* mobile */
-@media (max-width: 599px) {
-  html {
-    overflow-y: auto;
   }
   .portfolio-grid {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
     .portfolio-item {
+      
       .btns {
         flex-wrap: wrap;
         text-align: center;
         .preview {
           flex: 0 0 100%;
+          padding: 10px;
         }
       }
     }
@@ -232,7 +219,7 @@ $accent-color: #776B5D;
       width: 100%;
       height: auto;
       .gif {
-        height: 76%;
+        height: 74%;
         img {
           display: block;
           width: 100%;
@@ -252,6 +239,65 @@ $accent-color: #776B5D;
             font-size: 14px;
           }         
         }
+      }
+    }
+  }
+}
+
+/* mobile */
+@media (max-width: 599px) {
+  .portfolio-title {
+    margin-bottom: 20px;
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    .portfolio-item {
+      .pf-title {
+        line-height: 1.5;
+        span {
+          display: block;
+          margin-left: 18px;
+          margin-right: 0;
+        }
+      }
+      .btns {
+        flex-wrap: wrap;
+        text-align: center;
+        .preview {
+          flex: 0 0 100%;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .work {
+    flex-direction: column-reverse;
+    .moniter {
+      width: 100%;
+      height: auto;
+      .gif {
+        height: 74%;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .work-contents {
+      width: 100%;
+      height: auto;
+      .glass-box {
+        h4 {
+          margin-left: 12px;
+          font-size: 18px;
+        }
+      }
+      &::after {
+        height: 10px;
       }
     }
   }

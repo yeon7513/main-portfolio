@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Inner } from './components/StyledComponent';
 import './scss/header.scss';
 
 function LinkList({goto, children}){
@@ -15,7 +14,7 @@ function Layout(){
   return(
     <>
       <header>
-        <Inner className='inner'>
+        <div className='inner'>
           <nav>
             <ul>
               <LinkList goto='/'>Home</LinkList>
@@ -23,7 +22,7 @@ function Layout(){
               <LinkList goto='/portfolio'>Portfolio</LinkList>
             </ul>
           </nav>
-        </Inner>
+        </div>
       </header>
       <main>
         <Outlet />

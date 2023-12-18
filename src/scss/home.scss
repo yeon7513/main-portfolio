@@ -7,10 +7,6 @@ $sub-color: #EBE3D5;
 $btn-color: #B0A695;
 $accent-color: #776B5D;
 
-html {
-  overflow: hidden;
-}
-
 .intro {
   border-bottom: 1px solid #ccc;
   .intro-title {
@@ -20,20 +16,26 @@ html {
 }
 
 .my-text {
-  padding: 20px 0;
+  padding: 1.25rem 0;
   text-align: right;
   p {
-    line-height: 1.6;
+    font-weight: light;
     span {
       font-size: 1.125rem;
-      font-weight: bold;
+      font-weight: 800;
       color: $accent-color;
     }
   }
 }
 
 .contents {
-  margin-top: 20px;
+  margin-top: 1.25rem;
+  a {
+    transition: .3s;
+    &:hover {
+      color: $accent-color;
+    }
+  }
   .portfolio {
     width: 100%;
     ul {
@@ -41,15 +43,15 @@ html {
       justify-content: space-between;
       flex-wrap: wrap;
       width: 100%;
-      margin-top: 10px;
+      margin-top: .625rem;
       li {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         width: 25%;
-        padding: 5px 0;
+        padding: .3125rem 0;
         span {
-          width: 25px;
+          width: 1.5625rem;
           font-size: 1.25rem;
           font-weight: bold;
           color: $accent-color;
@@ -59,28 +61,28 @@ html {
   }
   .contact {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     ul {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       width: 100%;
-      margin-top: 10px;
+      margin-top: .625rem;
       li {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        padding: 5px 0;
+        padding: .3125rem 0;
         span {
-          width: 25px;
-          height: 24px;
-          margin-right: 8px;
+          width: 1.5625rem;
+          height: 1.5rem;
+          margin-right: .5rem;
           svg {
             display: flex;
             justify-content: center;
-            width: 25px;
-            font-size: 20px;
+            width: 1.5625rem;
+            font-size: 1.25rem;
             font-weight: bold;
             color: $accent-color;
           }
@@ -95,23 +97,17 @@ html {
 
 /* tablet */
 @media (min-width: 600px) and (max-width: 1023px) {
-  .intro-title {
-    h2 {
-      line-height: 1.5;
+  .intro {
+    .intro-title {
+      height: 250px;
     }
   }
-}
 
-/* mobile */
-@media (max-width: 599px) {
-  .intro-title {
-    h2 {
-      line-height: 1.8;
-      &.hello {
-        left: 20px;
-      }
-      &.world {
-        right: 20px;
+  .my-text {
+    padding: 10px 0;
+    p {
+      span {
+        font-size: 14px;
       }
     }
   }
@@ -127,7 +123,50 @@ html {
         flex-direction: column;
         justify-content: left;
         li {
-          width: 50%;
+          width: 100%;
+        }
+      }
+    }
+    .contact {
+      width: 50%;
+      margin-top: 0;
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+/* mobile */
+@media (max-width: 599px) {
+  .intro {
+    .intro-title {
+      height: 180px;
+    }
+  }
+
+  .my-text {
+    padding: 10px 0;
+    p {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+
+  .contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    .portfolio {
+      width: 50%;
+      ul {
+        flex-direction: column;
+        justify-content: left;
+        li {
+          width: 100%;
         }
       }
     }

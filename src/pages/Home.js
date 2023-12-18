@@ -83,8 +83,7 @@ function Home(){
           </div>
         </div>
         <div className="my-text" ref={myText}>
-          <p>My name is <span>Mun Huiyeon</span></p>
-          <p>and This is my <span>PORTFOLIO</span></p>
+          <p><span>Mun Huiyeon</span> / <span>PORTFOLIO</span></p>
         </div>
         <div className="contents" ref={contents}>
           <div className="portfolio">
@@ -105,15 +104,15 @@ function Home(){
             <ul>
               <li>
                 <span>
-                  <FontAwesomeIcon icon={faAt} />
-                </span>
-                <a href="mailto:huiyeon7513@naver.com" target="_blank" rel="noopener noreferrer">huiyeon7513@naver.com</a>
-              </li>
-              <li>
-                <span>
                   <FontAwesomeIcon icon={faMobile} />
                 </span>
                 <p>010-7557-0533</p>
+              </li>
+              <li>
+                <span>
+                  <FontAwesomeIcon icon={faAt} />
+                </span>
+                <a href="mailto:huiyeon7513@naver.com" target="_blank" rel="noopener noreferrer">My Mail</a>
               </li>
               <li>
                 <span>

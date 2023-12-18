@@ -6,6 +6,8 @@
   font-style: normal;
 }
 
+
+
 /* colors */
 $main-color: #F3EEEA;
 $sub-color: #EBE3D5;
@@ -42,6 +44,97 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
+
+.contact-wrap {
+  position: relative;
+  z-index: 5;
+  .contact-container {
+    .contact-btn {
+      position: relative;
+      z-index: 2;
+      width: 3.75rem;
+      height: 3.75rem;
+      border: none;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.5);
+      color: $btn-color;
+      cursor: pointer;
+      transition: .5s;
+      &:hover {
+        background-color: #fff;
+        color: $accent-color;
+      }
+      .text-bubble {
+        position: absolute;
+        top: 0; left: 50%;
+        opacity: 0;
+        visibility: 0;
+        padding: .3125rem .625rem;
+        background-color: $sub-color;
+        border-radius: 4px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        pointer-events: none;
+        transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        &::before {
+          content: attr(data-text);
+          font-size: .75rem;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: calc(.4375rem / 2 * -1);
+          width: .4375rem;
+          height: .4375rem;
+          background-color: $sub-color;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+          z-index: -999;
+          pointer-events: none;
+        }
+      }
+      .contact-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.875rem;
+      }
+      &:hover .text-bubble, &:focus:not(:focus-visible) .text-bubble {
+        opacity: 1;
+        visibility: visible;
+        top: -2.8rem;
+      }
+    }
+    .contact-me {
+
+      ul {
+        width: 100%;
+        margin-top: .625rem;
+        text-align: left;
+        li {
+          margin: .625rem 0;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            font-size: .875rem;
+            transition: .5s;
+            span {
+              margin-right: .3125rem;
+            }
+            &:hover {
+              color: $btn-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 /* 404 */
 .page404-wrap {

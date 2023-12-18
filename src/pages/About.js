@@ -6,6 +6,7 @@ import CSSPlugin from 'gsap/CSSPlugin';
 import '../scss/about.scss';
 import { faSignature, faCakeCandles, faHouseChimney, faEnvelope, faIdCard } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faBloggerB } from '@fortawesome/free-brands-svg-icons';
+import Contact from '../components/Contact';
 
 const skills = [
   {
@@ -191,7 +192,7 @@ function About(){
       <Container id='title'>
         <Inner>
           <div className='about-title'>
-            <Title ref={leftTitle}>Let me</Title>
+            <Title ref={leftTitle}>Let <span>me</span></Title>
             <Title ref={centerTitle}>introduce</Title>
             <Title ref={rightTitle}>myself.</Title>
           </div>
@@ -204,9 +205,6 @@ function About(){
             <p ref={aboutText}>
               어려서부터 한 사회생활로 깨달은 중요한 점은
               <span><b>꾸준함</b>, <b>책임감</b>, <b>도전정신</b> 그리고 <b>열정</b>입니다.</span>
-              그렇게 네 아이들의 엄마가 되어서도 저의 도전정신과 열정은 멈추지 않고
-              <span>비전공자이지만 새로운 분야에 도전하여 학습한 모든 것을</span>
-              <span><b>내 것으로 만들기 위해 노력</b>했습니다.</span>
               저의 배움과 경험은 아직 <b>진행형</b>입니다.
             </p>
           </div>
@@ -228,9 +226,11 @@ function About(){
                   <span><FontAwesomeIcon icon={faHouseChimney} /></span>
                   <span>대전시 대덕구</span>
                 </li>
+              </ul>
+              <ul>
                 <li>
                   <span><FontAwesomeIcon icon={faEnvelope} /></span>
-                  <span>huiyeon7513@naver.com</span>
+                  <a href="mailto:huiyeon7513@naver.com" target="_blank" rel="noopener noreferrer">Mail</a>
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faIdCard} /></span>
@@ -271,22 +271,23 @@ function About(){
             </table>
             <div className="wise">
               <p className='wise-ko'>
-                많이 보고 많이 겪고 많이 공부하는 것은 배움의 세 기둥이다.
-                <span>- 벤자민 디즈라엘리</span>
+              오늘의 지식은 내일의 힘이다.
+                <span>- 프랜시스 베이컨</span>
               </p>
               <p className='wise-en'>
-                Seeing much, suffering much, and studying much,
-                <br />are the three pillars of learning.
+                Knowledge today is power tomorrow.
               </p>
             </div>
             <div className='skill-text'>
-              <p>이 명언처럼 풍부한 경험을 쌓고 어려움을 극복하며 끊임없이 학습하는 것은<br />
-              저만의 <span>인생 다짐의 근간</span>이자 <span>지속적인 성장을 위한 결실</span>입니다.<br />
-              이 세 가지를 통해 저는 더 나은 자아를 발견하고<br />
-              세상과 더 깊이 소통하며 <span>지혜와 인내</span>를 길러가고자 다짐합니다.</p>
+              <p>
+                계속해서 <b>학습</b>하고 새로운 <b>경험</b>에서
+                <span><b>배움</b>을 얻는 것은 <b>지적 성장</b>과</span>
+                <span><b>인생의 풍요로움</b>을 위한 <b>중요한 가치</b>입니다.</span>
+              </p>
             </div>
           </div>
         </Inner>
+      <Contact />
       </Container>
     </>
   )

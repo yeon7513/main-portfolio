@@ -1,28 +1,39 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  width: 100%;
+  max-width: 64rem;
   height: 100vh;
+  margin: 0 auto;
   padding-top: 130px;
   box-sizing: border-box;
+  &.portfolio-wrap {
+    height: 100%;
+  }
   @media (min-width: 600px) and (max-width: 1023px) {
-    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    padding: 80px 100px;
+    &.portfolio-wrap {
+      padding: 80px 100px 50px;
+    }
   }
   @media (max-width: 599px) {
-    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    padding-top: 0;
+    &.portfolio-wrap {
+      display: block;
+      padding: 80px 50px 50px;
+
+    }
   }
 `
 
 export const Inner = styled.div`
-  max-width: 64rem;
-  margin: 0 auto;
+  width: 100%;
   box-sizing: border-box;
-  @media (min-width: 600px) and (max-width: 1023px) {
-    padding: 0 20px;
-  }
-  @media (max-width: 599px) {
-    padding: 0 20px;
-  }
 `
 
 export const Title = styled.h2`
@@ -37,6 +48,25 @@ export const Title = styled.h2`
     font-family: 'Playfair Display', serif;
     font-weight: 400;
   }
+  @media (min-width: 600px) and (max-width: 1023px) {
+    font-size: 120px;
+    &.hello {
+      top: 0; left: 0;
+    }
+    &.world {
+      bottom: 0; right: 0;
+    }
+  }
+  @media (max-width: 599px) {
+    font-size: 90px;
+    &.hello {
+      top: 0; left: 0;
+    }
+    &.world {
+      bottom: 0; right: 0;
+      font-size: 85px;
+    }
+  }
 `
 
 export const ContentTitle = styled.h3`
@@ -45,6 +75,14 @@ export const ContentTitle = styled.h3`
   font-size: 1.875rem;
   text-transform: uppercase;
   background-image: linear-gradient(rgba(235, 227, 214, 0) 0%, rgba(235, 227, 214, 0) 49%, rgba(235, 227, 214, 1) 50%, rgba(235, 227, 214, 1) 100%);
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 599px) {
+    font-size: 18px;
+  }
 `
 
 export const Skill = styled.td`
@@ -53,6 +91,12 @@ export const Skill = styled.td`
   padding: 0 20px;
   box-sizing: border-box;
   background-color: #EBE3D5;
+  @media (min-width: 600px) and (max-width: 1023px) {
+  }
+  @media (max-width: 599px) {
+    padding: 0 15px;
+    height: 35px;
+  }
 `
 
 export const Ability = styled.td`
@@ -61,6 +105,12 @@ export const Ability = styled.td`
   padding: 10px 0;
   box-sizing: border-box;
   background-color: #EBE3D5;
+  @media (min-width: 600px) and (max-width: 1023px) {
+  }
+  @media (max-width: 599px) {
+    padding: 5px 0;
+    height: 35px;
+  }
 `
 
 export const AbilityPercent = styled.span`
@@ -76,11 +126,18 @@ export const AbilityPercent = styled.span`
   box-sizing: border-box;
   background-color: #776B5D;
   color: #fff;
+  @media (min-width: 600px) and (max-width: 1023px) {
+  }
+  @media (max-width: 599px) {
+    padding: 1px 0;
+    padding-right: 5px;
+    font-size: 10px;
+  }
 `
 
 export const FullBtn = styled.a`
   padding: .4375rem .625rem;
-  font-size: 14px;
+  font-size: .875rem;
   border: none;
   outline: none;
   border-radius: .625rem;
@@ -93,8 +150,8 @@ export const FullBtn = styled.a`
   `
 
 export const SolidBtn = styled.a`
-  padding: .3125rem .625rem;
-  font-size: 14px;
+  padding: .3125rem;
+  font-size: .875rem;
   font-weight: bold;
   border: 2px solid #B0A695;
   outline: none;
@@ -105,5 +162,42 @@ export const SolidBtn = styled.a`
   &:hover {
     border: 2px solid #776B5D;
     color: #776B5D;
+  }
+
+  @media (min-width: 600px) and (max-width: 1023px) {
+    padding: 8px;
+  }
+  @media (max-width: 599px) {
+    padding: 8px;
+  }
+`
+
+export const ContactContainer = styled.div`
+  position: fixed;
+  bottom: ${props => (props.$contact ? '1.25rem' : '6.25rem')}; right: 5px;
+  width: 5.8125rem;
+  height: ${props => (props.$contact ? '11.875rem' : 0)};
+  padding: ${props => (props.$contact ? '.625rem 0' : 0)};
+  border-radius: .625rem;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+  transition: all .5s;
+  @media (min-width: 600px) and (max-width: 1023px) {
+
+  }
+  @media (max-width: 599px) {
+    bottom: ${props => (props.$contact ? '20px' : '60px')}; right: 0;
+  }
+`
+
+export const ContactMe = styled.div`
+  position: absolute;
+  top: 0; left: 50%;
+  padding-top: 4.6875rem;
+  transform: translateX(-50%);
+  
+  ul {
+    opacity: ${props => (props.$contact ? 1 : 0)};
+    transition: .5s;
   }
 `
