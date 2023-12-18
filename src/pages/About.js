@@ -62,8 +62,7 @@ function About(){
   useEffect(() => {
     const section = document.querySelectorAll('section');
     const sec_length = section.length;
-    const fullPage = window.innerWidth >= 1024;
-    if(fullPage) {
+
       section.forEach(function(item, index){
         item.addEventListener('mousewheel', function(event){
           event.preventDefault();
@@ -81,7 +80,7 @@ function About(){
           let selector = section[index];
   
           if (delta < 0){
-            if (selector !== sec_length-1){
+            if (selector !== sec_length -1){
               try{
                 moveTop = window.pageYOffset + selector.nextElementSibling.getBoundingClientRect().top;
               }catch(e){}
@@ -97,7 +96,7 @@ function About(){
           window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
         });
       });
-    }
+    
   }, []);
   
   

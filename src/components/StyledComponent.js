@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  max-width: 64rem;
+  width: 100vw;
   height: 100vh;
   margin: 0 auto;
   padding-top: 130px;
   box-sizing: border-box;
+  outline: 1px dotted red;
   &.portfolio-wrap {
     height: 100%;
   }
@@ -32,7 +33,8 @@ export const Container = styled.section`
 `
 
 export const Inner = styled.div`
-  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
   box-sizing: border-box;
 `
 
