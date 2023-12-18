@@ -35,6 +35,14 @@ export const Inner = styled.div`
   max-width: 64rem;
   margin: 0 auto;
   box-sizing: border-box;
+  @media (min-width: 600px) and (max-width: 1023px) {
+    width: 100%;
+    margin: 0 0;
+  }
+  @media (max-width: 599px) {
+    width: 100%;
+    margin: 0 0;
+  }
 `
 
 export const Title = styled.h2`
