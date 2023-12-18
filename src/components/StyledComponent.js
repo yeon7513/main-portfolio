@@ -6,7 +6,6 @@ export const Container = styled.section`
   margin: 0 auto;
   padding-top: 130px;
   box-sizing: border-box;
-  outline: 1px dotted red;
   &.portfolio-wrap {
     height: 100%;
   }
