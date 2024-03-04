@@ -45,7 +45,7 @@ function Contact() {
         <ContactMe $contact={contact} className='contact-me'>
           <ul>
             <li>
-              <a href="http://naver.me/xhKQ6kYc" target="_blank" rel="noopener noreferrer">
+              <a href="http://naver.me/xNmtk1AE" target="_blank" rel="noopener noreferrer">
                 <span><FontAwesomeIcon icon={faIdCard} /></span>
                 CV
               </a>
