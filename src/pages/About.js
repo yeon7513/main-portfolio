@@ -234,7 +234,7 @@ function About(){
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faIdCard} /></span>
-                  <a href="http://naver.me/xhKQ6kYc" target="_blank" rel="noopener noreferrer">이력서</a>
+                  <a href="http://naver.me/xNmtk1AE" target="_blank" rel="noopener noreferrer">이력서</a>
                 </li>
                 <li>
                   <span><FontAwesomeIcon icon={faGithub} /></span>
